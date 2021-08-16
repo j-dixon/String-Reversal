@@ -24,9 +24,11 @@ class MainActivity : AppCompatActivity() {
             val count = typedArray.count()
             var nul: Int = 0
 
-            while (nul <= count) for (word in typedArray)
-                word.reversed()
-                    nul++
+            while (nul <= count) {
+                for (word in typedArray) {
+                    word.reversed() }
+                
+                    nul++ }
 
             val reverseString = typedArray.toString()
 
