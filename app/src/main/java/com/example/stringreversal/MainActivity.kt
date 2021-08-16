@@ -21,16 +21,12 @@ class MainActivity : AppCompatActivity() {
             val getString = userString.text
 
             val typedArray: Array<String> = getString.split(" ").toTypedArray()
-            val count = typedArray.count()
-            var nul: Int = 0
-
-            while (nul <= count) for (word in typedArray)
-                word.reversed()
-                    nul++
 
             val reverseString = typedArray.toString()
 
-            changeText.text = reverseString
+            val programOutput = reverseString.split(" ").joinToString(" ") { it -> it.reversed() }
+
+            changeText.text = programOutput
         }
     }
 }
