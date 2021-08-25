@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
 
             programOutput.text = functionOutput
         }
-
     }
 
     private fun reverseString(userInput: String, exclusion: String): String {
@@ -53,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                     pointerOne++
                 } else {
                     currentCharacterOne = characterOne
-                   charArray[pointerOne] = (currentCharacterTwo)
+                    charArray[pointerOne] = (currentCharacterTwo)
                     pointerOne++
                 }
 
