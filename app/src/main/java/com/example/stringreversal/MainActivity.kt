@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
             // assigns two 'pointers', one assigned to 0 and the another to the final array segment
             var pointerOne = 0
-            var pointerTwo = length - 1
+            var pointerTwo = length -1
 
             val characterOne = charArray[pointerOne]
             val characterTwo = charArray[pointerTwo]
