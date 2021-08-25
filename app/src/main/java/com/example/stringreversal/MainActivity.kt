@@ -53,6 +53,8 @@ class MainActivity : AppCompatActivity() {
                     pointerOne++
                 } else {
                     currentCharacterOne = characterOne
+                    charArray[pointerOne] = currentCharacterTwo
+                    pointerOne++
                 }
 
                 if (exclusion.contains(characterTwo)) {
@@ -60,12 +62,9 @@ class MainActivity : AppCompatActivity() {
                     pointerTwo--
                 } else {
                     currentCharacterTwo = characterTwo
+                    charArray[pointerTwo] = currentCharacterOne
+                    pointerTwo--
                 }
-
-                charArray[pointerOne] = currentCharacterTwo
-                charArray[pointerTwo] = currentCharacterOne
-                pointerOne++
-                pointerTwo--
             }
         }
 
