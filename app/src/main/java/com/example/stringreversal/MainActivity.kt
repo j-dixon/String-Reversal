@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                     pointerOne++
                 } else {
                     currentCharacterOne = characterOne
-                    charArray[pointerOne] = currentCharacterTwo
+                   charArray[pointerOne] = (currentCharacterTwo)
                     pointerOne++
                 }
 
