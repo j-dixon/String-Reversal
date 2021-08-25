@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import kotlin.collections.contains as contains
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,16 +17,15 @@ class MainActivity : AppCompatActivity() {
         val button = findViewById<Button>(R.id.useButton)
 
         button.setOnClickListener {
-            val functionOutput = reverseString(userInput.toString(), exclusion.toString()).toString()
+            val functionOutput = reverseString(userInput.toString(), exclusion.toString())
 
             programOutput.text = functionOutput
         }
 
     }
 
-    private fun reverseString(userInput: String, exclusion: String) {
+    private fun reverseString(userInput: String, exclusion: String): String {
         // splits user inputted string by whitespace
-        val restrictions = exclusion.split(",")
         val words = userInput.split(" ")
 
         // extracts each word in the list 'words'
@@ -50,14 +48,14 @@ class MainActivity : AppCompatActivity() {
             // while the pointers are not equal to each other...
             // if either of the pointers are equal to an exclusion character...
             while (pointerOne != pointerTwo) {
-                if (restrictions.contains<Any>(characterOne)) {
+                if (exclusion.contains(characterOne)) {
                     // upscale pointer to the next character
                     pointerOne++
                 } else {
                     currentCharacterOne = characterOne
                 }
 
-                if (restrictions.contains<Any>(characterTwo)) {
+                if (exclusion.contains(characterTwo)) {
                     // downscale pointer to the previous character
                     pointerTwo--
                 } else {
@@ -70,6 +68,8 @@ class MainActivity : AppCompatActivity() {
                 pointerTwo--
             }
         }
+
+        return userInput
     }
 }
 
