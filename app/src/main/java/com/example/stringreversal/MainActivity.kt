@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 // increase the wordPointer by one so the program moves onto the next word in the string
                 wordPointer++
-                // assigns each character array to a variable, converted into a string
+                // assigns each character array to a variable, converteded into a string
                 val outputString = String(charArray)
                 // sets the programOutput text as the output from the loops
                 programOutput.text = "$outputString ${programOutput.text}"
