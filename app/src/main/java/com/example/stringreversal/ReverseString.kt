@@ -51,9 +51,10 @@ class ReverseString {
 
         }
 
-        val string = ""
+        var string = ""
+
         for (i in list) {
-            string.plus(i)
+            string = string.plus("$i ")
         }
 
         return string
