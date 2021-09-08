@@ -7,6 +7,7 @@ import org.junit.Test
 
 @RunWith(JUnit4::class)
 class ValidateTest {
+
     @Test
     fun whenInputIsValid() {
         val userInput = "Foxminded cool 24/7"
@@ -20,6 +21,20 @@ class ValidateTest {
         val userInput = ""
         val exclusion = ""
         val result = Validate.validateUserInput(userInput, exclusion)
+        assertThat(result).isEqualTo(false)
+    }
+
+    @Test
+    fun whenWordSizeIsValid() {
+        val wordSize = -1
+        val result = Validate.checkWordSize(wordSize)
+        assertThat(result).isEqualTo(true)
+    }
+
+    @Test
+    fun whenWordSizeIsInvalid() {
+        val wordSize = 1
+        val result = Validate.checkWordSize(wordSize)
         assertThat(result).isEqualTo(false)
     }
 }
