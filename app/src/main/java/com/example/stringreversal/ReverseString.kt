@@ -22,24 +22,28 @@ class ReverseString {
             // while charPointerOne is less than charPointerTwo
             while (charPointerOne < charPointerTwo) {
                 // if the currently selected character by charPointerOne is included in the exclusion characters...
-                if (exclusion.contains(charArray[charPointerOne])) {
-                    // move charPointerOne one place forward
-                    charPointerOne++
-                    // else if the currently selected character by charPointerTwo is included in the exclusion characters...
-                } else if (exclusion.contains(charArray[charPointerTwo])) {
-                    // move charPointerTwo one place backwards
-                    charPointerTwo--
-                    // else, if both conditions are not true, do...
-                } else {
-                    // defines the two characters to switch by charPointerOne and charPointerTwo
-                    val charToSwitchOne = charArray[charPointerOne]
-                    val charToSwitchTwo = charArray[charPointerTwo]
-                    // swaps these characters with each other
-                    charArray[charPointerOne] = charToSwitchTwo
-                    charArray[charPointerTwo] = charToSwitchOne
-                    // moves charPointerOne and charPointerTwo one place forward and one place backwards respectively
-                    charPointerOne++
-                    charPointerTwo--
+                when {
+                    exclusion.contains(charArray[charPointerOne]) -> {
+                        // move charPointerOne one place forward
+                        charPointerOne++
+                        // else if the currently selected character by charPointerTwo is included in the exclusion characters...
+                    }
+                    exclusion.contains(charArray[charPointerTwo]) -> {
+                        // move charPointerTwo one place backwards
+                        charPointerTwo--
+                        // else, if both conditions are not true, do...
+                    }
+                    else -> {
+                        // defines the two characters to switch by charPointerOne and charPointerTwo
+                        val charToSwitchOne = charArray[charPointerOne]
+                        val charToSwitchTwo = charArray[charPointerTwo]
+                        // swaps these characters with each other
+                        charArray[charPointerOne] = charToSwitchTwo
+                        charArray[charPointerTwo] = charToSwitchOne
+                        // moves charPointerOne and charPointerTwo one place forward and one place backwards respectively
+                        charPointerOne++
+                        charPointerTwo--
+                    }
                 }
             }
 
@@ -51,12 +55,12 @@ class ReverseString {
 
         }
 
-        var string = ""
-
+        var newString = ""
+        // concatenates new string with the reversed output
         for (i in list) {
-            string = string.plus("$i ")
+            newString = newString.plus("$i ")
         }
-
-        return string
+        // returns output as the newly reversed string
+        return newString
     }
 }
