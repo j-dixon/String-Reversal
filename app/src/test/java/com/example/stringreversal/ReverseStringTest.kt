@@ -47,10 +47,12 @@ class ReverseStringTest {
         assertEquals(expected, output)
     }
 
-    //@Test
-    //fun checkNullStrings() {
-        //val input = null; val exclusion = null; val expected = ""
+    @Test
+    fun checkNullStrings() {
+        val input = null; val exclusion = null; val expected = ""
 
-        //val output: String = reverse.reverse(input, exclusion)
-        //assertNull(output)
+        val output: String = reverse.reverse(input, exclusion)
+        assertEquals(output, expected)
+    }
 }
+

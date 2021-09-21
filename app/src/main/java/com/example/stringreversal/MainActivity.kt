@@ -23,10 +23,13 @@ class MainActivity : AppCompatActivity() {
         // sets an OnClickListener to the button, runs code below when clicked / pressed
         button.setOnClickListener {
             // defines UI elements and locates them in activity_main.xml
-            val userInput = findViewById<EditText>(R.id.userInput).text.toString()
-            val exclusion = findViewById<EditText>(R.id.restrictedChars).text.toString()
+            val userInput = findViewById<EditText>(R.id.userInput)
+            val exclusion = findViewById<EditText>(R.id.restrictedChars)
 
-            val output = classCall.reverse(userInput, exclusion)
+            val input: String = userInput.toString()
+            val exclude: String = exclusion.toString()
+
+            val output = classCall.reverse(input, exclude)
 
             val programOutput = findViewById<TextView>(R.id.programOutput)
 
