@@ -25,7 +25,15 @@ class ReverseStringTest {
 
     @Test
     fun checkLongString() {
-        val input = "Foxminded\ncool\n24/7"; val exclusion = "1,2,3,4,5,6,7,8,9"; val expected = "/\nlooc\ndednimxo24F7 "
+        val input = "Lorem ipsum dolor sit amet,\n" +
+                    " consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n" +
+                    " Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+
+        val exclusion = "1,2,3,4,5,6,7,8,9"
+
+        val expected = "meroL muspi rolod tis \n" +
+                       "tem,a rutetcesnoc gnicsipida tile, des od domsuie ropmet tnudidicni tu erobal te erolod angam \n" +
+                       ".auqila tU mine da minim mainev, siuq durtson noitaticrexe ocmallu sirobal isin tu piuqila xe ae odommoc tauqesnoc "
 
         val output: String = reverse.reverse(input, exclusion)
         assertEquals(expected, output)
@@ -33,7 +41,7 @@ class ReverseStringTest {
 
     @Test
     fun checkNonUTF8() {
-        val input = "\\xf8\\xa1\\xa1\\xa1\\xa1"; val exclusion = "a,c,j,h,t,5,7,3"; val expected = "1x\\1x\\a1x\\a1x\\a8fxa\\ "
+        val input = "0x11111000"; val exclusion = "a,c,j,h,t,5,7,3"; val expected = "00011111x0 "
 
         val output: String = reverse.reverse(input, exclusion)
         assertEquals(expected, output)

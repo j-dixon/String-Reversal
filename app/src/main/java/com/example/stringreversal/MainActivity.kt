@@ -10,7 +10,7 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
-    private val classCall = ReverseString()
+    private val reverse = ReverseString()
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,13 +25,12 @@ class MainActivity : AppCompatActivity() {
             // defines UI elements and locates them in activity_main.xml
             val userInput = findViewById<EditText>(R.id.userInput)
             val exclusion = findViewById<EditText>(R.id.restrictedChars)
-
-            val input: String = userInput.toString()
-            val exclude: String = exclusion.toString()
-
-            val output = classCall.reverse(input, exclude)
-
             val programOutput = findViewById<TextView>(R.id.programOutput)
+
+            val input: String = userInput.text.toString()
+            val exclude: String = exclusion.text.toString()
+
+            val output = reverse.reverse(input, exclude)
 
             programOutput.text = output
         }

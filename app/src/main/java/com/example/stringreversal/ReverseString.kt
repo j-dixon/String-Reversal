@@ -55,8 +55,6 @@ class ReverseString {
                 // assigns each character array to a variable, converted into a string
             }
 
-        } else {
-            null
         }
 
         var newString = ""
