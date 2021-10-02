@@ -48,21 +48,22 @@ class ReverseString {
                     }
                 }
 
-                val result = String(charArray)
+                val result = String(charArray).plus(" ")
                 list.add(result)
                 // increase the wordPointer by one so the program moves onto the next word in the string
                 wordPointer++
                 // assigns each character array to a variable, converted into a string
             }
-
         }
 
         var newString = ""
         // concatenates new string with the reversed output
         for (i in list) {
-            newString = newString.plus("$i ")
+            newString = newString.plus("$i")
         }
 
+        // removes trailing and leading whitespace characters from the final string
+        newString = newString.trim()
         // returns output as the newly reversed string
         return newString
     }
